@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Boston House Price Prediction </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Boston House Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Crime Rate per Capital" placeholder="Crime Rate per Capital" required="required" />
+        <input type="text" name="Residential Land Proportion" placeholder="Residential Land Proportion" required="required" />
+        <input type="text" name="Proportion of non-retail business" placeholder="Proportion of non-retail business" required="required" />
+        <input type="text" name="Charles River Bounds?" placeholder="Charles River Bounds?" required="required" />
+        <input type="text" name="Nitric Oxides Concentration" placeholder="Nitric Oxides Concentration" required="required" />
+        <input type="text" name="Average Number of rooms" placeholder="Average Number of rooms" required="required" />
+        <input type="text" name="Proportion of Owner Occupied units (1940)" placeholder="Proportion of Owner Occupied units (1940)" required="required" />
+        <input type="text" name="Distance to employment centers" placeholder="Distance to employment centers" required="required" />
+        <input type="text" name="Accessibility to radial highways" placeholder="Accessibility to radial highways" required="required" />
+        <input type="text" name="Property Tax Rate per $10,000" placeholder="Property Tax Rate per $10,000" required="required" />
+        <input type="text" name="Pupil Teacher Ratio" placeholder="Pupil Teacher Ratio" required="required" />
+        <input type="text" name="Proportion of Blacks" placeholder="Proportion of Blacks" required="required" />
+        <input type="text" name="% Lower Status of the population" placeholder="% Lower Status of the population" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Click to predict price</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
