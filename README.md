@@ -6,7 +6,7 @@ The project is carried out to fulfill the following requirements:
 * Create inference pipeline for the trained model
 * Deploy the Flask application using Heroku
 
-### Features of the dataset
+### Features of the dataset:
 * CRIM per capita crime rate by town
 * ZN proportion of residential land zoned for lots over 25,000 sq.ft.
 * INDUS proportion of non-retail business acres per town
