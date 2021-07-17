@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-model = pickle.load(open("predict_housing_price.pkl", "rb"))
+model = pickle.load(open("project/predict_housing_price.pkl", "rb"))
 
 def processInput(request_data:str) -> np.array:
     """Takes in the input data and converts it to an array
@@ -54,3 +54,5 @@ def results() -> str:
     except:
         return json.dumps({"error": "Prediction Failed"}), 500
 
+if __name__ == "__main__":
+    app.run(debug=True)
