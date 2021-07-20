@@ -31,3 +31,19 @@ https://boston-housing-price-app.herokuapp.com/
 ```
 pip install requirements.txt
 ```
+
+### Below is an example on how to make a price request on 2 inputs:
+```
+import requests
+import json
+
+url = 'http://127.0.0.1:5000/results'
+response = requests.post(url, data=json.dumps({"inputs":[[0.00632,28,2.31,1.0,0.538,6.575,65.2,4.0900,1.0,296.0,15.3,396.90,4.98], [0.00632,18.0,2.31,0.0,0.538,6.575,65.2,4.0900,1.0,296.0,15.3,396.90,4.98]]}))
+
+print(json.loads(response.text))
+
+```
+Prints out:
+```
+{'Predicted House Price in Dollars': [29.175531717632456, 28.994550824582806]}
+```
